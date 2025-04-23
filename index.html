@@ -12,67 +12,123 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for dark mode */
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
-        .dark-mode {
-            background-color: #000000; /* Dark background */
-            color: #ffffff; /* Light text */
-        }
-        .dark-mode h2,
-        .dark-mode h3,
-        .dark-mode p,
-        .dark-mode a {
-            color: #ffffff;
-        }
-        .bg-white { /* Light background */
+        
+        /* Light mode defaults */
+        body {
             background-color: #f9fafb;
             color: #1f2937;
         }
-        .text-gray-700{
-            color: #4b5563;
-        }
-
+        
         header {
-            transition: background-color 0.5s ease; /* Smooth transition for dark mode */
-        }
-        .dark-mode header {
-            background-color: #000000; /* Dark header */
-        }
-
-        footer {
+            background-color: #1f2937;
+            color: #ffffff;
             transition: background-color 0.5s ease;
         }
-
-        .dark-mode footer{
-             background-color: #000000;
+        
+        footer {
+            background-color: #f3f4f6;
+            color: #4b5563;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
-
+        
+        .project-card {
+            background-color: #ffffff;
+            color: #1f2937;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        
+        /* Responsive header adjustments */
+        @media (max-width: 768px) {
+            header nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            header nav ul {
+                justify-content: center;
+                margin: 1rem 0;
+            }
+            
+            header .flex-none {
+                width: 100%;
+                text-align: center;
+            }
+            
+            header .flex-1 {
+                order: 2;
+            }
+        }
+        
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #111827;
+            color: #f9fafb;
+        }
+        
+        .dark-mode header {
+            background-color: #000000;
+        }
+        
+        .dark-mode footer {
+            background-color: #1f2937;
+            color: #e5e7eb;
+        }
+        
+        .dark-mode .project-card {
+            background-color: #1f2937;
+            color: #f9fafb;
+        }
+        
+        .dark-mode h2,
+        .dark-mode h3 {
+            color: #f9fafb;
+        }
+        
+        .dark-mode .text-gray-700,
+        .dark-mode .text-gray-800 {
+            color: #e5e7eb;
+        }
+        
+        .dark-mode .bg-white,
+        .dark-mode .bg-gray-100 {
+            background-color: #1f2937;
+        }
+        
+        .dark-mode .bg-gray-200 {
+            background-color: #111827;
+        }
+        
         #about-me img {
-            max-width: 70%; /* Make the image responsive and smaller */
+            max-width: 70%;
             height: auto;
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <header class="bg-gray-800 text-white py-4">
+<body>
+    <header>
         <div class="container mx-auto px-4">
-            <nav class="flex items-center justify-between">
-                <ul class="flex space-x-6">
+            <nav class="flex items-center justify-between py-4">
+                <div class="flex-none w-1/4">
+                    <span class="text-xl font-bold">Abimael Perez</span>
+                </div>
+                <ul class="flex-1 flex justify-center space-x-8">
                     <li><a href="#" class="hover:text-gray-300 transition duration-300">Home</a></li>
                     <li><a href="#portfolio" class="hover:text-gray-300 transition duration-300">Projects</a></li>
                     <li><a href="#about-me" class="hover:text-gray-300 transition duration-300">About</a></li>
                     <li><a href="#certificates" class="hover:text-gray-300 transition duration-300">Certificates</a></li>
                     <li><a href="#contact" class="hover:text-gray-300 transition duration-300">Contact</a></li>
-                     <li>
-                        <button id="dark-mode-toggle" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </li>
                 </ul>
-                <div class="flex space-x-4">
-                    <a href="https://github.com/AbimaelPerezVega" target="_blank" title="GitHub" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-github text-xl"></i></a>
-                    <a href="mailto:abimaelperezvega26@gmail.com" title="Gmail" class="text-gray-300 hover:text-white transition duration-300"><i class="far fa-envelope text-xl"></i></a>
-                    <a href="https://www.linkedin.com/in/abimael-perez-vega-8870b6320/" target="_blank" title="LinkedIn" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-linkedin text-xl"></i></a>
+                <div class="flex-none flex items-center space-x-4">
+                    <button id="dark-mode-toggle" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="flex space-x-3">
+                        <a href="https://github.com/AbimaelPerezVega" target="_blank" title="GitHub" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-github text-xl"></i></a>
+                        <a href="mailto:abimaelperezvega26@gmail.com" title="Gmail" class="text-gray-300 hover:text-white transition duration-300"><i class="far fa-envelope text-xl"></i></a>
+                        <a href="https://www.linkedin.com/in/abimael-perez-vega-8870b6320/" target="_blank" title="LinkedIn" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-linkedin text-xl"></i></a>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -85,36 +141,36 @@
                     <img src="AbimaelProfessionalpic.jpg" alt="Your Photo" class="rounded-lg shadow-md">
                 </div>
                 <div class="md:w-2/3">
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">About Me</h2>
+                    <h2 class="text-2xl font-semibold mb-4">About Me</h2>
                     <p class="text-gray-700">
-                        I'm a passionate and versatile software engineer specializing in front-end development and cybersecurity, with a strong foundation in computer science. Over the past few years, I've contributed to innovative projects like RepairMate, a web app built with React that helps factories troubleshoot machines and train new employees more effectively. My approach to tech is driven by curiosity, problem-solving, and a desire to create meaningful digital experiences—whether that’s through building tools that empower users, strengthening system security, or designing interactive games that bring people closer. I’m currently seeking opportunities in Frontend Development, Game Design, or Cybersecurity where I can bring creativity, technical expertise, and user-centered thinking to the table.
+                        I'm a passionate and versatile software engineer specializing in front-end development and cybersecurity, with a strong foundation in computer science. Over the past few years, I've contributed to innovative projects like RepairMate, a web app built with React that helps factories troubleshoot machines and train new employees more effectively. My approach to tech is driven by curiosity, problem-solving, and a desire to create meaningful digital experiences—whether that's through building tools that empower users, strengthening system security, or designing interactive games that bring people closer. I'm currently seeking opportunities in Frontend Development, Game Design, or Cybersecurity where I can bring creativity, technical expertise, and user-centered thinking to the table.
                     </p>
                 </div>
             </div>
         </section>
 
         <section id="portfolio" class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Portfolio</h2>
+            <h2 class="text-2xl font-semibold mb-4">Portfolio</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="project-card rounded-lg shadow-md p-6">
                     <img src="repairmatepic.PNG" alt="RepairMate Screenshot" class="rounded-md mb-4 w-full">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">RepairMate</h3>
+                    <h3 class="text-xl font-semibold mb-2">RepairMate</h3>
                     <p class="text-gray-700 mb-4">RepairMate is a comprehensive web application designed to streamline machine troubleshooting and employee training.</p>
                     <div class="flex gap-4">
                         <a href="https://github.com/Xavier308/RepairMate" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline">GitHub README</a>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="project-card rounded-lg shadow-md p-6">
                     <img src="cybersec-pic4.jpg" alt="Higher Level Programming" class="rounded-md mb-4 w-full">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Higher Level Programming</h3>
+                    <h3 class="text-xl font-semibold mb-2">Higher Level Programming</h3>
                     <p class="text-gray-700 mb-4">This project involves exploring advanced programming concepts and techniques.</p>
                     <div class="flex gap-4">
                         <a href="https://github.com/AbimaelPerezVega/holbertonschool-higher_level_programming" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline">GitHub README</a>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="project-card rounded-lg shadow-md p-6">
                     <img src="cybersec-pic.jpg" alt="Cybersecurity" class="rounded-md mb-4 w-full">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Cybersecurity</h3>
+                    <h3 class="text-xl font-semibold mb-2">Cybersecurity</h3>
                     <p class="text-gray-700 mb-4">This project focuses on the principles and practices of cybersecurity.</p>
                     <div class="flex gap-4">
                         <a href="https://github.com/AbimaelPerezVega/holbertonschool-cyber_security" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline">GitHub README</a>
@@ -124,7 +180,7 @@
         </section>
 
         <section id="resume" class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Resume</h2>
+            <h2 class="text-2xl font-semibold mb-4">Resume</h2>
             <div class="flex flex-col md:flex-row gap-4">
                 <a href="https://docs.google.com/document/d/1bh-Vn3Bxiyyfua0ntSOtDYfPKzQdFGeMYUup_vETjoc/edit?usp=sharing" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">View Resume Online</a>
                 <a href="AbimaelPerezVega-cybersecurity_2025.pdf" download class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md">Download Resume (PDF)</a>
@@ -132,17 +188,17 @@
         </section>
 
         <section id="contact" class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contact Me</h2>
+            <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
             <div class="flex gap-6">
-                 <a href="https://www.linkedin.com/in/abimael-perez-vega-8870b6320/" target="_blank" title="LinkedIn" class="text-gray-600 hover:text-blue-600"><i class="fab fa-linkedin text-3xl"></i></a>
+                <a href="https://www.linkedin.com/in/abimael-perez-vega-8870b6320/" target="_blank" title="LinkedIn" class="text-gray-600 hover:text-blue-600"><i class="fab fa-linkedin text-3xl"></i></a>
                 <a href="https://github.com/AbimaelPerezVega" target="_blank" title="GitHub" class="text-gray-600 hover:text-gray-800"><i class="fab fa-github text-3xl"></i></a>
-                <a href="mailto:abimaelperezvega26@gmail.com"  title="Gmail" class="text-gray-600 hover:text-red-500"><i class="far fa-envelope text-3xl"></i></a>
+                <a href="mailto:abimaelperezvega26@gmail.com" title="Gmail" class="text-gray-600 hover:text-red-500"><i class="far fa-envelope text-3xl"></i></a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-200 text-gray-700 py-4">
-        <div class="container mx-auto px-4 text-center">
+    <footer>
+        <div class="container mx-auto px-4 text-center py-4">
             <p>&copy; 2025 My Portfolio. All rights reserved.</p>
         </div>
     </footer>
@@ -150,24 +206,34 @@
     <script>
         const darkModeToggle = document.getElementById('dark-mode-toggle');
         const body = document.body;
-        const nav = document.querySelector('header');
-        const sections = document.querySelectorAll('section');
-        const foot = document.querySelector('footer');
+        const projectCards = document.querySelectorAll('.project-card');
         const navLinks = document.querySelectorAll('header nav ul li a');
+        const contactIcons = document.querySelectorAll('#contact a');
 
+        // Check for saved theme preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            enableDarkMode();
+        }
 
         darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            nav.classList.toggle('dark-mode');
-            sections.forEach(section => section.classList.toggle('dark-mode'));
-            foot.classList.toggle('dark-mode');
-
             if (body.classList.contains('dark-mode')) {
-                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                disableDarkMode();
             } else {
-                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                enableDarkMode();
             }
         });
+
+        function enableDarkMode() {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            localStorage.setItem('darkMode', 'enabled');
+        }
+
+        function disableDarkMode() {
+            body.classList.remove('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            localStorage.setItem('darkMode', 'disabled');
+        }
 
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
@@ -183,6 +249,13 @@
                 e.preventDefault();
             });
         });
+
+        // Add special handling for contact icons in dark mode
+        if (body.classList.contains('dark-mode')) {
+            contactIcons.forEach(icon => {
+                icon.classList.add('dark-contact');
+            });
+        }
     </script>
 </body>
 </html>
