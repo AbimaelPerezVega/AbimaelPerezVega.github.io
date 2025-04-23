@@ -12,6 +12,38 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for dark mode */
+        }
+        .dark-mode {
+            background-color: #1f2937; /* Dark background */
+            color: #f8fafc; /* Light text */
+        }
+        .dark-mode h2,
+        .dark-mode h3,
+        .dark-mode p {
+            color: #f8fafc;
+        }
+        .bg-white { /* Light background */
+            background-color: #f9fafb;
+            color: #1f2937;
+        }
+        .text-gray-700{
+            color: #4b5563;
+        }
+
+        header {
+            transition: background-color 0.5s ease; /* Smooth transition for dark mode */
+        }
+        .dark-mode header {
+            background-color: #374151; /* Dark header */
+        }
+
+        footer {
+            transition: background-color 0.5s ease;
+        }
+
+        .dark-mode footer{
+             background-color: #374151;
         }
     </style>
 </head>
@@ -20,16 +52,21 @@
         <div class="container mx-auto px-4">
             <nav class="flex items-center justify-between">
                 <ul class="flex space-x-6">
-                    <li><a href="#home" class="hover:text-gray-300 transition duration-300">Home</a></li>
-                    <li><a href="#projects" class="hover:text-gray-300 transition duration-300">Projects</a></li>
+                    <li><a href="#" class="hover:text-gray-300 transition duration-300">Home</a></li>
+                    <li><a href="#portfolio" class="hover:text-gray-300 transition duration-300">Projects</a></li>
                     <li><a href="#about-me" class="hover:text-gray-300 transition duration-300">About</a></li>
                     <li><a href="#certificates" class="hover:text-gray-300 transition duration-300">Certificates</a></li>
-                    <li><a href="#blog" class="hover:text-gray-300 transition duration-300">Blog</a></li>
+                    <li><a href="#contact" class="hover:text-gray-300 transition duration-300">Contact</a></li>
+                     <li>
+                        <button id="dark-mode-toggle" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
                 </ul>
                 <div class="flex space-x-4">
-                    <a href="#" title="GitHub" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-github text-xl"></i></a>
-                    <a href="#" title="Gmail" class="text-gray-300 hover:text-white transition duration-300"><i class="far fa-envelope text-xl"></i></a>
-                    <a href="#" title="LinkedIn" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="https://github.com/AbimaelPerezVega" target="_blank" title="GitHub" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-github text-xl"></i></a>
+                    <a href="mailto:abimaelperezvega26@gmail.com" title="Gmail" class="text-gray-300 hover:text-white transition duration-300"><i class="far fa-envelope text-xl"></i></a>
+                    <a href="https://www.linkedin.com/in/abimael-perez-vega-8870b6320/" target="_blank" title="LinkedIn" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-linkedin text-xl"></i></a>
                 </div>
             </nav>
         </div>
@@ -58,8 +95,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Project 1 Title</h3>
                     <p class="text-gray-700 mb-4">Project 1 Description.</p>
                     <div class="flex gap-4">
-                        <a href="#" class="text-blue-500 hover:text-blue-700 hover:underline">GitHub README</a>
-                        <a href="#" class="text-green-500 hover:text-green-700 hover:underline">Deployed App</a>
+                        <a href="https://github.com/AbimaelPerezVega" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline">GitHub README</a>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6">
@@ -67,8 +103,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Project 2 Title</h3>
                     <p class="text-gray-700 mb-4">Project 2 Description.</p>
                     <div class="flex gap-4">
-                        <a href="#" class="text-blue-500 hover:text-blue-700 hover:underline">GitHub README</a>
-                        <a href="#" class="text-green-500 hover:text-green-700 hover:underline">Deployed App</a>
+                        <a href="https://github.com/AbimaelPerezVega" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline">GitHub README</a>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6">
@@ -76,8 +111,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Project 3 Title</h3>
                     <p class="text-gray-700 mb-4">Project 3 Description.</p>
                     <div class="flex gap-4">
-                        <a href="#" class="text-blue-500 hover:text-blue-700 hover:underline">GitHub README</a>
-                        <a href="#" class="text-green-500 hover:text-green-700 hover:underline">Deployed App</a>
+                        <a href="https://github.com/AbimaelPerezVega" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline">GitHub README</a>
                     </div>
                 </div>
             </div>
@@ -94,9 +128,9 @@
         <section id="contact" class="mb-12">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contact Me</h2>
             <div class="flex gap-6">
-                <a href="#" title="LinkedIn" class="text-gray-600 hover:text-blue-600"><i class="fab fa-linkedin text-3xl"></i></a>
-                <a href="#" title="GitHub" class="text-gray-600 hover:text-gray-800"><i class="fab fa-github text-3xl"></i></a>
-                <a href="#" title="Twitter" class="text-gray-600 hover:text-blue-400"><i class="fab fa-twitter text-3xl"></i></a>
+                 <a href="https://www.linkedin.com/in/abimael-perez-vega-8870b6320/" target="_blank" title="LinkedIn" class="text-gray-600 hover:text-blue-600"><i class="fab fa-linkedin text-3xl"></i></a>
+                <a href="https://github.com/AbimaelPerezVega" target="_blank" title="GitHub" class="text-gray-600 hover:text-gray-800"><i class="fab fa-github text-3xl"></i></a>
+                <a href="mailto:abimaelperezvega26@gmail.com"  title="Gmail" class="text-gray-600 hover:text-red-500"><i class="far fa-envelope text-3xl"></i></a>
             </div>
         </section>
     </main>
@@ -108,7 +142,41 @@
     </footer>
 
     <script>
-        // You can add JavaScript here for interactive elements
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        const nav = document.querySelector('header');
+        const sections = document.querySelectorAll('section');
+        const foot = document.querySelector('footer');
+        const navLinks = document.querySelectorAll('header nav ul li a');
+
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            nav.classList.toggle('dark-mode');
+            sections.forEach(section => section.classList.toggle('dark-mode'));
+            foot.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetId = e.target.getAttribute('href').slice(1);
+                if (targetId) {
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+                e.preventDefault();
+            });
+        });
     </script>
 </body>
 </html>
