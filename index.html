@@ -16,22 +16,36 @@
     </style>
 </head>
 <body class="bg-gray-100">
-    <header class="bg-blue-600 text-white py-4">
+    <header class="bg-gray-800 text-white py-4">
         <div class="container mx-auto px-4">
-            <h1 class="text-3xl font-semibold">My Portfolio</h1>
+            <nav class="flex items-center justify-between">
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-gray-300 transition duration-300">Home</a></li>
+                    <li><a href="#projects" class="hover:text-gray-300 transition duration-300">Projects</a></li>
+                    <li><a href="#about-me" class="hover:text-gray-300 transition duration-300">About</a></li>
+                    <li><a href="#certificates" class="hover:text-gray-300 transition duration-300">Certificates</a></li>
+                    <li><a href="#blog" class="hover:text-gray-300 transition duration-300">Blog</a></li>
+                </ul>
+                <div class="flex space-x-4">
+                    <a href="#" title="GitHub" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-github text-xl"></i></a>
+                    <a href="#" title="Gmail" class="text-gray-300 hover:text-white transition duration-300"><i class="far fa-envelope text-xl"></i></a>
+                    <a href="#" title="LinkedIn" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-linkedin text-xl"></i></a>
+                </div>
+            </nav>
         </div>
     </header>
 
     <main class="container mx-auto py-8 px-4">
         <section id="about-me" class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">About Me</h2>
-            <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex flex-col md:flex-row items-center gap-8">
                 <div class="md:w-1/3">
                     <img src="AbimaelProfessionalpic.jpg" alt="Your Photo" class="rounded-lg shadow-md">
                 </div>
                 <div class="md:w-2/3">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">About Me</h2>
                     <p class="text-gray-700">
-                        I'm a passionate and versatile software developer engineer with a strong foundation in computer science and hands-on experience in front-end development. Over the past few years, I've contributed to innovative projects like RepairMate, a web app built with React that helps factories troubleshoot machines and train new employees more effectively.My approach to tech is driven by curiosity, problem-solving, and creating meaningful digital experiences—whether that’s through building tools that empower users or designing games that bring people closer. I’m currently looking for opportunities in Frontend Development or Game Design where I can bring creativity, technical skills, and user-centered thinking to the table.                    </p>
+                        I'm a passionate and versatile software developer engineer with a strong foundation in computer science and hands-on experience in front-end development. Over the past few years, I've contributed to innovative projects like RepairMate, a web app built with React that helps factories troubleshoot machines and train new employees more effectively. My approach to tech is driven by curiosity, problem-solving, and creating meaningful digital experiences—whether that’s through building tools that empower users or designing games that bring people closer. I’m currently looking for opportunities in Frontend Development or Game Design where I can bring creativity, technical skills, and user-centered thinking to the table.
+                    </p>
                 </div>
             </div>
         </section>
